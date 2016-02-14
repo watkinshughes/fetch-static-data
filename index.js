@@ -2,20 +2,20 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-module.exports = (settings)=> {
+module.exports = (settings, callback)=> {
   const endpoint = settings.endpoint; 
-  const file = settings.output + '/' + endpoint + '.' + settings.format;
   fetch(settings.api + endpoint)
-  .then(
-    (res)=> {
-      return res.text();
-    })
-  .then(
-    (text)=> {
-      fs.writeFile(file, text, (error) => {
+  .then((res)=> {
+    return res.text();
+  })
+  .then((data)=> {
+    if (settings.output) {
+      let file = settings.output + '/' + endpoint + '.' + settings.format;
+      fs.writeFile(file, data, (error) => {
         if (error) throw error;
         console.log(endpoint + ' saved!');
       });
-    }
-  );
+    } 
+    callback(data);
+  });
 };
