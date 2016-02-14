@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Simple node module for fetching API endpoints to save as static files. Useful for managing data sets for larger static site generators.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watkinshughes/fetch-static-data.git"
   },
   "author": "Ryan Watkins-Hughes",
   "license": "MIT",
