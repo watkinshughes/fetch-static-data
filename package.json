@@ -1,6 +1,6 @@
 {
   "name": "fetch-static-data",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Simple node module for fetching API endpoints to save as static files. Useful for managing data sets for larger static site generators.",
   "main": "index.js",
   "repository": {
